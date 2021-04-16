@@ -10,6 +10,24 @@
   </head>
 
   <body>
+     <div class="header-logo">
+       <%= link_to "Bookers", root_path %>
+     </div>
+      <li>
+
+      </li>
+     <% if user_signed_in? %>
+      <li>
+        <%= link_to "LogOut", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "LogIn", new_user_session_path %>
+      </li>
+    <% end %>
+
+
+
     <%= yield %>
   </body>
 </html>
