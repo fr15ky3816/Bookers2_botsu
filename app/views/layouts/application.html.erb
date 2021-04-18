@@ -13,14 +13,32 @@
      <div class="header-logo">
        <%= link_to "Bookers", root_path %>
      </div>
-      <li>
 
-      </li>
+
      <% if user_signed_in? %>
+      <li>
+        <%= link_to "home", user_path(current_user.id) %>
+      </li>
+      <li>
+       <%= link_to "users", users_path  %>
+      </li>
+      <li>
+       <%= link_to "Bookes", books_path   %>
+      </li>
       <li>
         <%= link_to "LogOut", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
+      <li>
+       <%= link_to "Home", root_path %>
+      </li>
+      <li>
+       <%= link_to "About", home_about_path %>
+      </li>
+      <li>
+       <%= link_to "sign up", new_user_registration_path %>
+      </li>
+
       <li>
         <%= link_to "LogIn", new_user_session_path %>
       </li>
